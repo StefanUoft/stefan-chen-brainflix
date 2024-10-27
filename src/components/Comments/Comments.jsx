@@ -1,20 +1,22 @@
 import CommentItem from "../CommentItem/CommentItem";
 import "./Comments.scss";
+import MohamMuruge from "../../assets/images/Mohan-muruge.jpg";
 import CommentIcon from "../../assets/icons/add_comment.svg";
+
 
 function Comments({ heroVideo }) {
   const commentNum = heroVideo.comments.length;
 
   return (
     <div className="comments">
-      <p className="comments_number">
+      <p className="comments__number">
         {`${commentNum} ${commentNum > 1 ? "Comments" : "Comment"}`}
       </p>
       <div className="comments__form-wrapper">
-        <div className="comments__avatar"></div>
+        <img className="comments__avatar" src={MohamMuruge} alt="User Icon" />
         <form className="comments__form">
           <label htmlFor="comment" className="comments__label">
-            Join the Conversation
+            JOIN THE CONVERSATION
           </label>
           <textarea
             id="comment"
@@ -22,17 +24,17 @@ function Comments({ heroVideo }) {
             className="comments__input"
             placeholder="Add a new comment"
           ></textarea>
-          <button type="submit" className="button button--comment">
+          <button type="submit" className="comments__button">
             <img
               src={CommentIcon}
               alt="comment icon"
-              className="button__icon1"
+              className="comments__button__icon1"
             />
-            Comment
+            COMMENT
             <img
               src={CommentIcon}
               alt="comment icon"
-              className="button__icon2"
+              className="comments__button__icon2"
             />
           </button>
         </form>
