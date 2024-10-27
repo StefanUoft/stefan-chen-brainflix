@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import HeroVideo from './components/HeroVideo/HeroVideo'
 import HeroVideoDetails from './components/HeroVideoDetails/HeroVideoDetails'
 import VideoDetails from './data/video-details.json'
-
+import Comments from './components/Comments/Comments'
 
 function App() {
   const [videos] =useState(VideoDetails);
@@ -25,6 +25,7 @@ function App() {
       <div className='video__content'>
         <div>
           <HeroVideoDetails heroVideo={heroVideo} />
+          <Comments heroVideo={heroVideo} />
 
         </div>
 
