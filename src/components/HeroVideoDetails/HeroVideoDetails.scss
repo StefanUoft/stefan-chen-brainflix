@@ -109,5 +109,9 @@
         font-size: .875rem;
       }
   }
+
+  @include desktop{
+    padding: 1.5rem;
+  }
   
 }

@@ -1,13 +1,26 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.hero__container{
-    width: 100%;
-    height: 20rem;
+.hero__container {
+  display: flex;
+  width: 100%;
+  height: 20rem;
+  @include tablet {
+    height: 40rem;
+    background-color: $Seondary-brainflix-darkblack;
+  }
+
 }
 
-.hero__video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include tablet {
+    width: 95%;
+    margin: 0 auto;
+  }
+  @include desktop{
+    width: 80%;
+  }
 }

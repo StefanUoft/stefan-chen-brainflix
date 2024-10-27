@@ -39,9 +39,15 @@
   }
 
   @include tablet {
+    padding: 1.5rem 0;
     margin: 0 2.25rem;
     &__container {
       font-size: 0.875rem;
     }
+  }
+
+  @include desktop {
+    padding: 1.5rem;
+    margin: 0;
   }
 }

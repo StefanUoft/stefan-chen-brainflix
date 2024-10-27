@@ -1,0 +1,41 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.next-video {
+  display: flex;
+  margin: 1rem;
+
+  &__thumbnail {
+    width: 13rem;
+    height: 7rem;
+    border-radius: 0.25rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  @include tablet {
+    margin: 1.5rem 2.25rem;
+
+    &__details {
+      font-size: 0.875rem;
+    }
+  }
+
+  @include desktop{
+    &__thumbnail {
+      width: 9rem;
+      height: 5rem;
+      
+    }
+  }
+}

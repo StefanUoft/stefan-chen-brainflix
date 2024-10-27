@@ -1,0 +1,17 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.next-videos{
+    &__title{
+        padding: 1rem 0 0 1rem;
+        font-size: .8125rem;
+        color: $Primary-sliver;
+    }
+
+    @include tablet{
+        &__title{
+            padding: 1.5rem 0 0 2.25rem;
+            font-size: .875rem;
+        }
+    }
+}
