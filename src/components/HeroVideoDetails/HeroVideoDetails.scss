@@ -9,7 +9,7 @@
 
   &__title {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     padding: 1rem 0;
     border-bottom: 0.0625rem solid $Seondary-mercury;
   }
@@ -28,7 +28,7 @@
   }
 
   &__channel {
-    font-weight: bold;
+    font-weight: 700;
     padding-bottom: 1rem;
   }
 
@@ -58,9 +58,11 @@
 
   @include tablet{
     gap: 0;
+    padding: 1.5rem 2.25rem;
+
     &__title {
         font-size: 2.0625rem;
-        font-weight: bold;
+        font-weight: 700;
         padding: 0.5rem 0;
         border-bottom: none;
       }

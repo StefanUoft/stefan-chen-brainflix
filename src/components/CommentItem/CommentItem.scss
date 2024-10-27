@@ -1,0 +1,47 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-bottom: 0.0625rem solid $Seondary-mercury;
+
+  &__avatar {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background-color: $Seondary-mercury;
+    flex-shrink: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8125rem;
+  }
+
+  &__userinfo {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.5rem;
+  }
+
+  &__name {
+    width: 50%;
+    font-weight: 700;
+  }
+  &__timestamp {
+    width: 50%;
+    color: $Primary-sliver;
+    text-align: right;
+  }
+
+  @include tablet {
+    margin: 0 2.25rem;
+    &__container {
+      font-size: 0.875rem;
+    }
+  }
+}
