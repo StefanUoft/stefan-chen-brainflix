@@ -4,7 +4,7 @@ import './NextVideoItem.scss';
 function NextVideoItem({ id, thumbnail, title, channel }) {
   return (
     <li className="next-video">
-      <Link to={`/video/${id}`} className="next-video__link">
+      <Link to={`/videos/${id}`} className="next-video__link">
         <div className="next-video__image">
           <img
             src={thumbnail}

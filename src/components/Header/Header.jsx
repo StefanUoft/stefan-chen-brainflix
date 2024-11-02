@@ -30,11 +30,11 @@ function Header() {
           <img className="header__user1" src={MohamMuruge} alt="User Icon" />
         </div>
 
-        <a className="header__upload" href="#">
+        <Link to="/upload" className="header__upload" href="#">
           <img src={UploadIcon} alt="Upload Icon" />
           UPLOAD
           <img src={UploadIcon} alt="Upload Icon" />
-        </a>
+        </Link>
         <img className="header__user2" src={MohamMuruge} alt="User Icon" />
       </div>
     </header>
