@@ -3,13 +3,14 @@ import MohamMuruge from "../../assets/images/Mohan-muruge.jpg";
 import SearchIcon from "../../assets/icons/search.svg";
 import UploadIcon from "../../assets/icons/upload.svg";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header">
-      <a className="header__logo" href="#">
+      <Link className="header__logo" to="/">
         <img src={Logo} alt="BrainFlix Logo" />
-      </a>
+      </Link>
       <div className="header__section">
         <div className="header__container">
           <div className="header__search">

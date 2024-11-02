@@ -5,6 +5,13 @@
   display: flex;
   margin: 1rem;
 
+  &__link{
+    text-decoration: none;
+    color: $Primary-brainflix-black;
+    display: flex;
+  }
+
+
   &__thumbnail {
     width: 13rem;
     height: 7rem;

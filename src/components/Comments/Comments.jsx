@@ -1,19 +1,35 @@
+import { useState } from "react";
 import CommentItem from "../CommentItem/CommentItem";
 import "./Comments.scss";
 import MohamMuruge from "../../assets/images/Mohan-muruge.jpg";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
 function Comments({ heroVideo }) {
-  const commentNum = heroVideo.comments.length;
+  const [comments, setComments] = useState(heroVideo.comments);
+
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+
+    const newComment = {
+      id: Date.now().toString(),
+      name: "Current User",
+      timestamp: Date.now(),
+      comment: event.target.comment.value,
+    };
+
+    setComments([newComment, ...comments]);
+
+    event.target.reset();
+  };
 
   return (
     <div className="comments">
       <p className="comments__number">
-        {`${commentNum} ${commentNum > 1 ? "Comments" : "Comment"}`}
+        {`${comments.length} ${comments.length > 1 ? "Comments" : "Comment"}`}
       </p>
       <div className="comments__form-wrapper">
         <img className="comments__avatar" src={MohamMuruge} alt="User Icon" />
-        <form className="comments__form">
+        <form className="comments__form" onSubmit={handleCommentSubmit}>
           <label htmlFor="comment" className="comments__label">
             JOIN THE CONVERSATION
           </label>
@@ -40,7 +56,7 @@ function Comments({ heroVideo }) {
         </form>
       </div>
       <ul className="comments__list">
-        {heroVideo.comments.map((comment) => (
+        {comments.map((comment) => (
           <CommentItem
             key={comment.id}
             name={comment.name}
