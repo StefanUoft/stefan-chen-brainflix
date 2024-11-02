@@ -45,6 +45,7 @@ function App() {
           path="/video/:videoId" 
           element={<HomePage videos={videos} heroVideo={heroVideo} fetchHeroVideo={fetchHeroVideo} />} 
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

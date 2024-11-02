@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     font-size: 0.8125rem;
+    width: 100%;
   }
 
   &__userinfo {
@@ -37,6 +38,8 @@
     color: $Primary-sliver;
     text-align: right;
   }
+
+
 
   @include tablet {
     padding: 1.5rem 0;
