@@ -30,7 +30,7 @@ function Header() {
           <img className="header__user1" src={MohamMuruge} alt="User Icon" />
         </div>
 
-        <Link to="/upload" className="header__upload" href="#">
+        <Link to="/upload" className="header__upload" >
           <img src={UploadIcon} alt="Upload Icon" />
           UPLOAD
           <img src={UploadIcon} alt="Upload Icon" />
