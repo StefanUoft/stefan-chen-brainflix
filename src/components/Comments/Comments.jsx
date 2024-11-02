@@ -28,13 +28,13 @@ function Comments({ heroVideo }) {
             <img
               src={CommentIcon}
               alt="comment icon"
-              className="comments__button__icon1"
+              className="comments__button-icon1"
             />
             COMMENT
             <img
               src={CommentIcon}
               alt="comment icon"
-              className="comments__button__icon2"
+              className="comments__button-icon2"
             />
           </button>
         </form>
