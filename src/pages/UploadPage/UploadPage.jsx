@@ -56,7 +56,7 @@ function UploadPage() {
             </div>
 
             <div className="upload-page__actions">
-            <button type="submit" className="upload-page__publish">
+              <button type="submit" className="upload-page__publish">
                 <img src={publishIcon} alt="Publish Icon" />
                 PUBLISH
                 <img src={publishIcon} alt="Publish Icon" />

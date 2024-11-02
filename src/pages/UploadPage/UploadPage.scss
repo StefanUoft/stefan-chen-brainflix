@@ -95,4 +95,43 @@
     margin-bottom: 1rem;
     text-decoration: none;
   }
+
+  @include tablet{
+    padding:0;
+
+    &__title{
+        padding: 1.5rem 3.25rem;
+        font-size: 2.0625rem;
+        font-weight: 700;
+    }
+
+    &__form{
+        margin: 0rem 3.25rem;
+        padding: 1.5rem 0;
+        border-top: 0.0625rem solid $Seondary-mercury;
+    }
+
+    &__label{
+        font-size: .875rem;
+    }
+
+    &__thumbnail{
+        width: 50%;
+    }
+
+    &__actions{
+        margin: 0.5rem 0;
+        padding: 1.5rem 0;
+        border-top: 0.0625rem solid $Seondary-mercury;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    &__publish, &__cancel{
+        width: 20%;
+        margin-bottom: 0;
+        padding: 0.65rem;
+    }
+  }
 }
