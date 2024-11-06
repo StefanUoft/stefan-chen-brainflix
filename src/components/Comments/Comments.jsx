@@ -4,8 +4,7 @@ import "./Comments.scss";
 import MohamMuruge from "../../assets/images/Mohan-muruge.jpg";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
-function Comments({ heroVideo }) {
-  const [comments, setComments] = useState(heroVideo.comments);
+function Comments({ comments }) { 
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -17,9 +16,8 @@ function Comments({ heroVideo }) {
       comment: event.target.comment.value,
     };
 
-    setComments([newComment, ...comments]);
-
     event.target.reset();
+
   };
 
   return (

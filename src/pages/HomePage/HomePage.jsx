@@ -15,22 +15,27 @@ function HomePage() {
   const [heroVideo, setHeroVideo] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/videos?api_key=${API_KEY}`)
-      .then((response) => {
+    const fetchVideos = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
         setVideos(response.data);
         if (response.data.length > 0) {
           fetchHeroVideo(response.data[0].id);
         }
-      })
-      .catch((error) => console.error("Error fetching videos:", error));
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+      }
+    };
+    fetchVideos();
   }, []);
 
-  const fetchHeroVideo = (id) => {
-    axios
-      .get(`${API_URL}/videos/${id}?api_key=${API_KEY}`)
-      .then((response) => setHeroVideo(response.data))
-      .catch((error) => console.error("Error fetching video details:", error));
+  const fetchHeroVideo = async (id) => {
+    try {
+      const response = await axios.get(`${API_URL}/videos/${id}?api_key=${API_KEY}`);
+      setHeroVideo(response.data);
+    } catch (error) {
+      console.error("Error fetching video details:", error);
+    }
   };
 
   useEffect(() => {
@@ -49,7 +54,7 @@ function HomePage() {
       <div className="video__content">
         <div className="video__content__info">
           <HeroVideoDetails heroVideo={heroVideo} />
-          <Comments heroVideo={heroVideo} />
+          <Comments comments={heroVideo.comments} /> 
         </div>
         <NextVideos videos={videos} currentVideoId={heroVideo.id} />
       </div>
