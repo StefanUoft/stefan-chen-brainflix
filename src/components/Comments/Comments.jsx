@@ -4,7 +4,7 @@ import "./Comments.scss";
 import MohamMuruge from "../../assets/images/Mohan-muruge.jpg";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
-function Comments({ comments }) { 
+function Comments({ comments = []}) { 
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();

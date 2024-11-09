@@ -31,6 +31,7 @@ function HomePage() {
   const fetchHeroVideo = async (id) => {
     try {
       const response = await axios.get(`${API_URL}/videos/${id}`);
+      console.log("Fetched hero video:", response.data);
       setHeroVideo(response.data);
     } catch (error) {
       console.error("Error fetching video details:", error);
