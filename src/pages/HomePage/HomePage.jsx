@@ -6,8 +6,7 @@ import Comments from "../../components/Comments/Comments";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import axios from "axios";
 
-const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-const API_KEY = "3da4f5ee-20fd-44ea-a6bb-bff3f5793e97";
+const API_URL = "http://localhost:8080"; 
 
 function HomePage() {
   const { videoId } = useParams();
@@ -17,10 +16,10 @@ function HomePage() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+        const response = await axios.get(`${API_URL}/videos`);
         setVideos(response.data);
         if (response.data.length > 0) {
-          fetchHeroVideo(response.data[0].id);
+          fetchHeroVideo(response.data[0].id); 
         }
       } catch (error) {
         console.error("Error fetching videos:", error);
@@ -31,7 +30,7 @@ function HomePage() {
 
   const fetchHeroVideo = async (id) => {
     try {
-      const response = await axios.get(`${API_URL}/videos/${id}?api_key=${API_KEY}`);
+      const response = await axios.get(`${API_URL}/videos/${id}`);
       setHeroVideo(response.data);
     } catch (error) {
       console.error("Error fetching video details:", error);
@@ -44,7 +43,7 @@ function HomePage() {
     } else if (videos.length > 0) {
       fetchHeroVideo(videos[0].id);
     }
-  }, [videoId]);
+  }, [videoId, videos]);
 
   if (!heroVideo) return <p>Loading...</p>;
 
@@ -53,7 +52,7 @@ function HomePage() {
       <HeroVideo heroVideo={heroVideo} />
       <div className="video__content">
         <div className="video__content__info">
-          <HeroVideoDetails heroVideo={heroVideo} />
+          <HeroVideoDetails heroVideo={heroVideo} /> 
           <Comments comments={heroVideo.comments} /> 
         </div>
         <NextVideos videos={videos} currentVideoId={heroVideo.id} />
