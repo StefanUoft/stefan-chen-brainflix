@@ -7,7 +7,7 @@ function NextVideos({ videos, currentVideoId }) {
       <h2 className="next-videos__title">NEXT VIDEOS</h2>
       <ul className="next-videos__list">
         {videos
-          .filter((video) => video.id !== currentVideoId) // Exclude the current video
+          .filter((video) => video.id !== currentVideoId) 
           .map((video) => (
             <NextVideoItem
               key={video.id}
